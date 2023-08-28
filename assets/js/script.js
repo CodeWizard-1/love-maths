@@ -7,10 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
-               checkAnswer();
+                checkAnswer();
             } else {
                 let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`);
                 runGame(gameType);
             }
         });
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runGame(gameType) {
 
-    //Create two random numbers between 1 and 25
+    // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
 
@@ -37,21 +36,21 @@ function runGame(gameType) {
 }
 
 /**
- * Checks the answer against the first element in
+ * Checks the answer agaist the first element in
  * the returned calculateCorrectAnswer array
  */
 function checkAnswer() {
     let userAnswer = parseInt(document.getElementById("answer-box").value);
-    let calculateedAnswer = calculateCorrectAnswer();
+    let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
         alert("Hey! You got it right! :D");
     } else {
-        alert(`Awwww.... you answer ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`)    
+        alert(`Awwww.... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);   
     }
 
-    runGame(calculateedAnswer[1]);
+    runGame(calculatedAnswer[1]);
 
 }
 
@@ -59,7 +58,7 @@ function calculateCorrectAnswer() {
 
     let operand1 = parseInt(document.getElementById('operand1').innerText);
     let operand2 = parseInt(document.getElementById('operand2').innertext);
-    let operator = document.getElementById('operator').innerText;
+    let operator = document.getElementById("operator").innerText;
 
 }
 
